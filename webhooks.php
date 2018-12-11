@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $text
 			];
-			
+			$message = $arrayJson['events'][0]['message']['text'];
 			$id = $arrayJson['events'][0]['source']['userId'];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -37,7 +37,7 @@ if (!is_null($events['events'])) {
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
-			if($messages == "สวัสดี"){
+			if($message == "สวัสดี"){
      			$arrayPostData['to'] = $id;
       			$arrayPostData['messages'][0]['type'] = "text";
       			$arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
