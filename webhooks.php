@@ -39,7 +39,7 @@ if (!is_null($events['events'])) {
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
-			if($message == "สวัสดี"){
+			if($text == "สวัสดี"){
      			$arrayPostData['to'] = $text;
       			$arrayPostData['messages'][0]['type'] = "text";
       			$arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
