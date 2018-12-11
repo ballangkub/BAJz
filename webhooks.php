@@ -7,6 +7,10 @@ $access_token = '6Fkcia04Z6b5eNyPFvCTM98VKSofDCm3zr8tX1XrbPSdMBCCCDhNhxXiJTP3wIj
 
 // Get POST body content
 $content = file_get_contents('php://input');
+$arrayJson = json_decode($content, true);
+$arrayHeader = array();
+$arrayHeader[] = "Content-Type: application/json";
+$arrayHeader[] = "Authorization: Bearer {$accessToken}";
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
