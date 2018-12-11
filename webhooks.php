@@ -35,6 +35,17 @@ if (!is_null($events['events'])) {
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
+			if($text == "สวัสดี"){
+     			$arrayPostData['to'] = $id;
+      			$arrayPostData['messages'][0]['type'] = "text";
+      			$arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
+      			$arrayPostData['messages'][1]['type'] = "sticker";
+      			$arrayPostData['messages'][1]['packageId'] = "2";
+      			$arrayPostData['messages'][1]['stickerId'] = "34";
+      			pushMsg($arrayHeader,$arrayPostData);
+   			}
+			
+			
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -46,15 +57,7 @@ if (!is_null($events['events'])) {
 
 			echo $result . "\r\n";
 			
-			if($text == "สวัสดี"){
-     			$arrayPostData['to'] = $id;
-      			$arrayPostData['messages'][0]['type'] = "text";
-      			$arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
-      			$arrayPostData['messages'][1]['type'] = "sticker";
-      			$arrayPostData['messages'][1]['packageId'] = "2";
-      			$arrayPostData['messages'][1]['stickerId'] = "34";
-      			pushMsg($arrayHeader,$arrayPostData);
-   }
+
 		}
 	}
 }
