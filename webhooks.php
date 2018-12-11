@@ -21,7 +21,6 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$text = $event['source']['userId'];
 			$message = $event['message']['text'];
-			$id = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -41,7 +40,7 @@ if (!is_null($events['events'])) {
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			if($message == "สวัสดี"){
-     			$arrayPostData['to'] = $id;
+     			$arrayPostData['to'] = $text;
       			$arrayPostData['messages'][0]['type'] = "text";
       			$arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
       			$arrayPostData['messages'][1]['type'] = "sticker";
@@ -49,7 +48,6 @@ if (!is_null($events['events'])) {
       			$arrayPostData['messages'][1]['stickerId'] = "34";
       			pushMsg($arrayHeader,$arrayPostData);
    			}
-			
 			
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
