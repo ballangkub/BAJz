@@ -46,7 +46,7 @@ if (!is_null($events['events'])) {
 
 			echo $result . "\r\n";
 			
-			if($messages == "สวัสดี"){
+			if($text == "สวัสดี"){
      			$arrayPostData['to'] = $id;
       			$arrayPostData['messages'][0]['type'] = "text";
       			$arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
