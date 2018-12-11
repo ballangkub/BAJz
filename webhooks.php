@@ -7,12 +7,11 @@ $access_token = '6Fkcia04Z6b5eNyPFvCTM98VKSofDCm3zr8tX1XrbPSdMBCCCDhNhxXiJTP3wIj
 
 // Get POST body content
 $content = file_get_contents('php://input');
-$arrayJson = json_decode($content, true);
+$events = json_decode($content, true);
 $arrayHeader = array();
 $arrayHeader[] = "Content-Type: application/json";
 $arrayHeader[] = "Authorization: Bearer {$access_token}";
 // Parse JSON
-$events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -29,7 +28,7 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $text
 			];
-			$message = $arrayJson['events'][0]['message']['text'];
+			$message = $events['events'][0]['message']['text'];
 			$id = $arrayJson['events'][0]['source']['userId'];
 
 			// Make a POST Request to Messaging API to reply to sender
