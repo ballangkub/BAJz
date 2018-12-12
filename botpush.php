@@ -8,12 +8,12 @@ $access_token = '6Fkcia04Z6b5eNyPFvCTM98VKSofDCm3zr8tX1XrbPSdMBCCCDhNhxXiJTP3wIj
 
 $channelSecret = 'cb35ef400aeeb1531a9c836e5d3e72ed';
 
-$pushID = 'U065093edd69838903cc8aedf034df042';
+$pushID = 'U9c6890841b8db5c961a3d0c562e57e0f';
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('KUY');
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('SAWASDEE JAR');
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
