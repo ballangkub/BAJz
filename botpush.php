@@ -11,9 +11,9 @@ if ($conn->connect_error) {
 } 
 echo "Connected successfully";
 
-$txt1 = "SELECT LineID FROM details LIMIT 1";
+$txt1 = "SELECT LineID FROM details ";
 
-$txt2 = "SELECT Message FROM details LIMIT 1 ";
+$txt2 = "SELECT Message FROM details ";
 
 require "vendor/autoload.php";
 
@@ -26,7 +26,7 @@ $pushID = $txt1;
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Detail".$txt2);
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($txt2);
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
