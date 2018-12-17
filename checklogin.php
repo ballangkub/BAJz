@@ -13,8 +13,7 @@ if (!$conn) {
 } else { 
 	echo "Connected Successfully";
 }
-	$sql = INSERT INTO `heroku_b577b61b9273cc5`.`details`
-	(`LineID`,`Message`) VALUES (<{LineID: 'TEST' }>, <{Message: 'TEST' }>);
+	$sql = "INSERT INTO `heroku_b577b61b9273cc5`.`details` (`LineID`,`Message`) VALUES (<{LineID: 'TEST' }>, <{Message: 'TEST' }>)";
 
         if (mysqli_query($conn , $sql)) {
      	echo "New record created successfully";
