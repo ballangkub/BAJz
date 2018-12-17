@@ -11,15 +11,14 @@
 if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
 } else { 
-	echo "Connected Successfully";
+      echo "Connected Successfully";
 }
 
 	$sql = "INSERT INTO 'heroku_b577b61b9273cc5'.'details' (LineID , Message) VALUES ('TET', 'TEST')";
-        if ($conn->query($sql) === TRUE) {
+        if ($conn,$sql) {
         echo "New record created successfully";
 	} else { 
-      	echo "Error : " . $conn ;
+      	echo "Error" ;
 }
-	mysqli_close($conn);
 
 ?>
