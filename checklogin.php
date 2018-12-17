@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO detailnew (ID , LineID , Message) VALUES ('".$_POST["txtid"]."' , '".$_POST["txtlineid"]."' , '".$_POST["txtmessage"]."')";
+$sql = "INSERT INTO details ( LineID , Message) VALUES ('".$_POST["txtlineid"]."' , '".$_POST["txtmessage"]."')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
