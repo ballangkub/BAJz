@@ -11,8 +11,9 @@ if ($conn->connect_error) {
 } 
 echo "Connected successfully";
 
-$txt1 = "SELECT LineID FROM details ";
-$txt2 = "SELECT Message FROM details";
+$txt1 = "SELECT LineID FROM details LIMIT 1";
+
+$txt2 = "SELECT Message FROM details LIMIT 1 ";
 
 require "vendor/autoload.php";
 
