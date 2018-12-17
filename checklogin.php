@@ -15,7 +15,7 @@ if (!$conn) {
 echo "Connected successfully";
  
 	$sql = "INSERT INTO details (LineID , Message) VALUES ('TEST','TEST')";
-        if (mysqli_query(!$conn, !$sql)) {
+        if (mysqli_query($conn , $sql)) {
      	echo "New record created successfully";
 	} else {
       	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
