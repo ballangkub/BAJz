@@ -1,5 +1,5 @@
 <?php
-
+/*
 $servername = "us-cdbr-iron-east-01.cleardb.net";
 $username = "b1ab7271b69167";
 $password = "f300f19a";
@@ -19,7 +19,7 @@ if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
-}
+} */
 
 $test1 = $_POST["txtlineid"];
 $test2 = $_POST["txtmessage"];
