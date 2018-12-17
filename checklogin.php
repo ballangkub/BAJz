@@ -13,8 +13,8 @@ if (!$conn) {
 } else { 
 	echo "Connected Successfully";
 }
-	$sql = "INSERT INTO details (LineID , Message) VALUES ("TEST" , "TEST")";
 
+	$sql = "INSERT INTO details (LineID , Message) VALUES ('TEST' , 'TEST')";
         if (mysqli_query($conn , $sql)) {
      	echo "New record created successfully";
 	} else {
