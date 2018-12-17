@@ -1,19 +1,26 @@
 <?php
-	session_start();
-	mysql_connect("us-cdbr-iron-east-01.cleardb.net","b1ab7271b69167","f300f19a");
-	mysql_select_db("heroku_b577b61b9273cc5");
-	$strSQL = "INSERT INTO `heroku_b577b61b9273cc5` (LineID,Message) VALUES ('".$_POST["txtlineid"]."' , '".$_POST["txtmessage"]."')";
-	$objQuery = mysql_query($strSQL);
-	if($objQuery)
-	{
-			echo "NICE LOGIN";
-			
-	}
-	else
-	{
-			echo "ERROR";
-		header("Location:linebotapi.php");
-	}
-	
-	mysql_close();
+	$url = parse_url(getenv("us-cdbr-iron-east-01.cleardb.net"));
+
+	$server = $url["host"];
+	$username = $url["b1ab7271b69167"];
+	$password = $url["f300f19a"];
+	$db = substr($url["heroku_b577b61b9273cc5"], 1);
+
+	$conn = mysqli_connect($server, $username, $password, $db);
+
+
+if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+}
+ 
+echo "Connected successfully";
+ 
+	$sql = "INSERT INTO details (LineID , Message) VALUES ('TEST','TEST')";
+       if (mysqli_query($conn, $sql)) {
+     	echo "New record created successfully";
+	} else {
+      	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+	mysqli_close($conn);
+
 ?>
