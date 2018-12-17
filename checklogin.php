@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	mysql_connect("localhost","root","12345678");
+	mysql_connect("127.0.0.1","root","12345678");
 	mysql_select_db("test");
 	$strSQL = "INSERT INTO linebot (LineID,Message) VALUES ('".$_POST["txtlineid"]."' , '".$_POST["txtmessage"]."')";
 	$objQuery = mysql_query($strSQL);
