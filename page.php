@@ -10,16 +10,8 @@
 Register<br>
 <table border="1" style="width: 300px">
 <tbody>
+
 <tr>
-<td> &nbsp;ID</td>
-
-<td><input name="txtid" type="text" id="txtid">
-
-</td>
-
-</tr>
-	
-	<tr>
 <td> &nbsp;Line ID</td>
 <td>
 <input name="txtlineid" type="text" id="txtlineid">
