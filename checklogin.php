@@ -10,10 +10,9 @@
 
 if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
+} else { echo ""Connected Successfully";
+
 }
- 
-echo "Connected successfully";
- 
 	$sql = "INSERT INTO details (LineID , Message) VALUES ('TEST','TEST')";
         if (mysqli_query($conn , $sql)) {
      	echo "New record created successfully";
