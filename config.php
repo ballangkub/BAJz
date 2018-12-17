@@ -1,11 +1,14 @@
 <?php
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$servername = "us-cdbr-iron-east-01.cleardb.net";
+$username = "b1ab7271b69167";
+$password = "f300f19a";
 
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
+// Create connection
+$conn = new mysqli($servername, $username, $password);
 
-$conn = new mysqli($server, $username, $password, $db);
-
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
 ?>
