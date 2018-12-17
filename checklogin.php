@@ -15,9 +15,9 @@ if (!$conn) {
 }
 
 	$sql = "INSERT INTO 'heroku_b577b61b9273cc5'.'details' ('LineID' , 'Message') VALUES ('TEST' , 'TEST')";
-        if (mysqli_query($conn , $sql)) {
-     	echo "New record created successfully";
-	} else {
+        if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+	} else { 
       	echo "Error";
 }
 	mysqli_close($conn);
