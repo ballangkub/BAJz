@@ -9,4 +9,6 @@ $db = substr($url["heroku_b577b61b9273cc5"], 1);
 
 $conn = new mysqli($server, $username, $password, $db);
 
+echo "TEST";
+
 ?>
