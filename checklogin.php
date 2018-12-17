@@ -18,7 +18,7 @@ if (!$conn) {
         if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
 	} else { 
-      	echo "Error" . $sql . $conn;
+      	echo "Error : " . $sql . $conn;
 }
 	mysqli_close($conn);
 
