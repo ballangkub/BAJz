@@ -1,26 +1,24 @@
 <?php
-	$url = parse_url(getenv("us-cdbr-iron-east-01.cleardb.net"));
+$servername = "us-cdbr-iron-east-01.cleardb.net";
+$username = "b1ab7271b69167";
+$password = "f300f19a";
+$dbname = "heroku_b577b61b9273cc5";
 
-	$server = $url["us-cdbr-iron-east-01.cleardb.net"];
-	$username = $url["b1ab7271b69167"];
-	$password = $url["f300f19a"];
-	$db = substr($url["heroku_b577b61b9273cc5"], 1);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
 
-	$conn = new mysqli($server, $username, $password, $db);
+$sql = "INSERT INTO details (LineID , Message)
+VALUES ('TTTT' , 'EEEE')";
 
-if (!$conn) {
-      die("Connection failed: " . mysqli_connect_error());
-} else { 
-      echo "Connected Successfully";
-}
-
-	$sql = "INSERT INTO 'heroku_b577b61b9273cc5'.'details' (LineID , Message) VALUES ('TET', 'TEST')";
-	if ($conn->query($sql) === TRUE) {
-    	echo "New record created successfully";
-	} else {
-    	echo "Error: " . $sql . "<br>" . $conn->error;
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();
-
 ?>
