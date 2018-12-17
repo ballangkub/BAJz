@@ -11,6 +11,8 @@ if ($conn->connect_error) {
 } 
 echo "Connected successfully";
 
+$txt1 = "SELECT LineID FROM details ";
+$txt2 = "SELECT Message FROM details";
 
 require "vendor/autoload.php";
 
@@ -18,12 +20,12 @@ $access_token = '6Fkcia04Z6b5eNyPFvCTM98VKSofDCm3zr8tX1XrbPSdMBCCCDhNhxXiJTP3wIj
 
 $channelSecret = 'cb35ef400aeeb1531a9c836e5d3e72ed';
 
-$pushID = 'U9c6890841b8db5c961a3d0c562e57e0f';
+$pushID = $txt1;
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('SAWASDEE JAR');
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($txt2);
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
