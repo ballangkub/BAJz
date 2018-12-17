@@ -39,5 +39,4 @@ $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($test2
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-header("Page.php");
 ?>
