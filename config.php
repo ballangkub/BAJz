@@ -1,4 +1,4 @@
-<? php
+<?php
 
 $url = parse_url(getenv("us-cdbr-iron-east-01.cleardb.net"));
 
