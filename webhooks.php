@@ -9,7 +9,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+} else { 
+    echo "Connection Success";
+}
 
 /* $sql = "INSERT INTO details ( LineID , Message) VALUES ('".$_POST["txtlineid"]."' , '".$_POST["txtmessage"]."')";
 if ($conn->query($sql) === TRUE) {
