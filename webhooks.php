@@ -66,9 +66,9 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
-if ("SELECT UserID FROM linebot WHERE UserID != $idcode"){
+$sql1 = "SELECT UserID FROM linebot WHERE UserID"
+if ($sql1 == $idcode) && ($conn->query($sql) === TRUE) {
     $sql = "INSERT INTO linebot (UserID , Name) VALUES ( '$idcode' , '$nameline' )";
-}else if ($conn->query($sql) === TRUE) {
     echo "Success ADD";
 } else  {
     echo "Error";
