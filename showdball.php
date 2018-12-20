@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 $text = "ballangja"
 
-$sql1 = "SELECT * FROM detailnew WHERE LineID = $text" ;
+$sql1 = "SELECT * FROM detailnew WHERE LineID = '$text'";
 $sql = "SELECT ID , LineID , Message FROM detailnew";
 $result = $conn->query($sql1);
 
