@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 $text = "ballangja"
 
 $sql = "SELECT Number , UserID , Name FROM botline";
-$result = $conn->query($sql1);
+$result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
