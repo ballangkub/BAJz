@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "INSERT INTO details ( LineID , Message) VALUES ( 'TEST2' , 'TEST2' )";
+$sql = "INSERT INTO details ( LineID , Message) VALUES ( 'TEST3' , '$arrJson['events'][0]['source']['userId']' )";
 if ($conn->query($sql) === TRUE) {
     echo "Success ADD";
 } else  {
