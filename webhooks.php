@@ -41,7 +41,10 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
   $sql = "INSERT INTO details ( LineID ) VALUES ('".$arrJson['events'][0]['source']['userId']."')";
 } else if ($conn->query($sql) === TRUE) {
-  $arrPostData['messages'][0]['text'] = "New record created successfully";
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "New record created successfully".$arrJson['events'][0]['source']['userId'];
 } else if ($conn->query($sql) === FALSE) {
     echo "Error";
 } else {
