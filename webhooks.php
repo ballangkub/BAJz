@@ -42,7 +42,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $text = $arrPostData['messages']['text'];
-  $arrPostData['messages'][0]['text'] = '$text';
+  $arrPostData['messages'][0]['text'] = $text;
   //$idcode = $arrJson['events'][0]['source']['userId'];
  // $nameline = $arrJson['events'][0]['source']['displayName'];
 } else {
