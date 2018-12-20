@@ -14,13 +14,13 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT LineID , Message FROM details";
+$sql = "SELECT ID , LineID , Message FROM detailnew";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "1 : " .$row["LineID"]. " - 2 : " .$row["Message"]. "<br>";
+        echo "ID : " .$row["ID"]. "LineID : " .$row["LineID"]. " - Message : " .$row["Message"]. "<br>";
     }
 } else {
     echo "0 results";
