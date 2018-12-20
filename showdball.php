@@ -13,8 +13,6 @@ if ($conn->connect_error) {
     echo "Connection Success";
 }
 
-$text = "ballangja"
-
 $sql = "SELECT Number , UserID , Name FROM botline";
 $result = $conn->query($sql);
 
