@@ -50,14 +50,16 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
-  $test2 = $arrJson['events'][0]['source']['userId'];
+  $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId']['displayName'];
+  $idcode = $arrJson['events'][0]['source']['userId'];
+  $nameline = $arrJson['events'][0]['source']['displayName'];
 } else {
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = $arrJson['events'][0]['source']['userId'];
-  $test2 = $arrJson['events'][0]['source']['userId'];
+  $arrPostData['messages'][0]['text'] = $arrJson['events'][0]['source']['userId']['displayName'];
+  $idcode = $arrJson['events'][0]['source']['userId'];
+  $nameline = $arrJson['events'][0]['source']['displayName'];
 }
 
 $ch = curl_init();
@@ -71,7 +73,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
-$sql = "INSERT INTO details ( LineID , Message) VALUES ( 'TEST7' , '$test2' )";
+$sql = "INSERT INTO details ( LineID , Message) VALUES ( '$idcode' , '$nameline' )";
 if ($conn->query($sql) === TRUE) {
     echo "Success ADD";
 } else  {
