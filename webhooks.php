@@ -41,7 +41,6 @@ $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
  
 $strUrl = "https://api.line.me/v2/bot/message/reply";
-$strUrldp = "https://api.line.me/v2/bot/profile/{userId}";
  
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
@@ -71,7 +70,7 @@ else {
 }
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL,$strUrldp);
+curl_setopt($ch, CURLOPT_URL,$strUrl);
 curl_setopt($ch, CURLOPT_HEADER, false);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
