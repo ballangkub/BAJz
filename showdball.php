@@ -13,13 +13,13 @@ if ($conn->connect_error) {
    // echo "Connection Success";
 }
 
-$sql = "SELECT Number , UserID , Name FROM botline";
+$sql = "SELECT UserID , Name FROM botline";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "Number : " .$row["Number"]. " - UserID : " .$row["UserID"]. " - Name : " .$row["Name"]. "<br>";
+        echo "UserID : " .$row["UserID"]. " - Name : " .$row["Name"]. "<br>";
     }
 } else {
     echo "0 results";
