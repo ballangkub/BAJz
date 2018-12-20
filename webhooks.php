@@ -22,7 +22,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error";
 }
 
-/*
+
  $sql = "INSERT INTO details ( LineID ) VALUES ('".$arrJson['events'][0]['source']['userId']."')";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
