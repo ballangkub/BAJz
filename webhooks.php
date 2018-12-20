@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     echo "Connection Success";
 }
 
-/* $sql = "INSERT INTO details ( LineID , Message) VALUES ('".$_POST["txtlineid"]."' , '".$_POST["txtmessage"]."')";
+/* $sql = "INSERT INTO details ( LineID ) VALUES ('".$arrJson['events'][0]['source']['userId']."')";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
@@ -39,13 +39,19 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
+  $sql = "INSERT INTO details ( LineID ) VALUES ('".$arrJson['events'][0]['source']['userId']."')";
+if ($conn->query($sql) === TRUE) {
+  $arrPostData['messages'][0]['text'] = "New record created successfully";
+} else {
+    echo "Error";
+}
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = $arrJson['events'][0]['source']['userId'];
 }
- 
+
  
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
