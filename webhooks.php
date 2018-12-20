@@ -13,7 +13,6 @@ if ($conn->connect_error) {
     echo "Connection Success";
 }
 
-echo $test2;
 /*
 $sql = "INSERT INTO details ( LineID , Message) VALUES ( 'TEST3' , 'TEST3' )";
 if ($conn->query($sql) === TRUE) {
@@ -68,6 +67,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['text'] = $arrJson['events'][0]['source']['userId'];
 }
 
+echo $test2;
 
 
 $ch = curl_init();
