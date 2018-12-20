@@ -15,14 +15,13 @@ if ($conn->connect_error) {
 
 $text = "ballangja"
 
-$sql1 = "SELECT * FROM detailnew WHERE LineID = '$text'";
-$sql = "SELECT ID , LineID , Message FROM detailnew";
+$sql = "SELECT Number , UserID , Name FROM botline";
 $result = $conn->query($sql1);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "ID : " .$row["ID"]. " - LineID : " .$row["LineID"]. " - Message : " .$row["Message"]. "<br>";
+        echo "Number : " .$row["Number"]. " - UserID : " .$row["UserID"]. " - Name : " .$row["Name"]. "<br>";
     }
 } else {
     echo "0 results";
