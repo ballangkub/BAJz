@@ -76,7 +76,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
-$sql = "INSERT INTO detailnew (ID , LineID , Message) VALUES ( '12' , '$idcode' , '$nameline' )";
+$sql = "INSERT INTO detailnew (ID , LineID , Message) VALUES ( '13' , '$idcode' , '$nameline' )";
 if ($conn->query($sql) === TRUE) {
     echo "Success ADD";
 } else  {
