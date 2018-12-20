@@ -57,7 +57,13 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['text'] = $arrJson['events'][0]['source']['userId'];
 }
 
- $sql = "INSERT INTO details ( LineID ) VALUES ('".$arrJson['events'][0]['source']['userId']."')";
+ //$sql = "INSERT INTO details ( LineID ) VALUES ('".$arrJson['events'][0]['source']['userId']."')";
+$sql = "INSERT INTO details ( LineID , Message) VALUES ( 'TEST','$arrJson['events'][0]['source']['userId']')";
+if ($conn->query($sql) === TRUE) {
+    echo "Success ADD";
+} else  {
+    echo "Error";
+}
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
