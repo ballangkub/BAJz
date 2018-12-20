@@ -42,9 +42,9 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $text = $arrJson['events'][0]['message']['text'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ID ของคุณคือ ".$arrJson['events'][0]['source']['userId'].$text;
-  //$idcode = $arrJson['events'][0]['source']['userId'];
- // $nameline = $arrJson['events'][0]['source']['displayName'];
+  $arrPostData['messages'][0]['text'] = "ID ของคุณคือ ".$arrJson['events'][0]['source']['userId'].;
+  $idcode = $arrJson['events'][0]['source']['userId'];
+  $nameline = $text;
 } else {
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -66,13 +66,13 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
-/*
-$sql = "INSERT INTO detailnew (ID , LineID , Message) VALUES ( '14' , '$idcode' , '$nameline' )";
-if ($conn->query($sql) === TRUE) {
+if ("SELECT UserID FROM linebot WHERE UserID != $idcode"){
+    $sql = "INSERT INTO linebot (UserID , Name) VALUES ( '$idcode' , '$nameline' )";
+}else if ($conn->query($sql) === TRUE) {
     echo "Success ADD";
 } else  {
     echo "Error";
-} */
+} 
 
 
 ?>
