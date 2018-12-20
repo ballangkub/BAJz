@@ -12,15 +12,16 @@ if ($conn->connect_error) {
 } else { 
     echo "Connection Success";
 }
-/*
 
-$sql = "INSERT INTO details ( LineID , Message) VALUES ( "TEST","$arrJson['events'][0]['source']['userId']")";
+
+$sql = "INSERT INTO details ( LineID , Message) VALUES ( 'TEST1' , 'TEST1' )";
 if ($conn->query($sql) === TRUE) {
     echo "Success ADD";
 } else  {
     echo "Error";
 }
 
+/*
  $sql = "INSERT INTO details ( LineID ) VALUES ('".$arrJson['events'][0]['source']['userId']."')";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
