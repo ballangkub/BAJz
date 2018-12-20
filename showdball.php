@@ -13,9 +13,11 @@ if ($conn->connect_error) {
     echo "Connection Success";
 }
 
+$text = "ballangja"
 
+$sql1 = "SELECT * FROM detailnew WHERE LineID = $text ;
 $sql = "SELECT ID , LineID , Message FROM detailnew";
-$result = $conn->query($sql);
+$result = $conn->query($sql1);
 
 if ($result->num_rows > 0) {
     // output data of each row
