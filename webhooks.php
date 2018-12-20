@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     echo "Connection Success";
 }
 
-$sql = "INSERT INTO details ( LineID , Message) VALUES ( 'TEST','$arrJson['events'][0]['source']['userId']')";
+$sql = "INSERT INTO details ( LineID , Message) VALUES ( "TEST","$arrJson['events'][0]['source']['userId']")";
 if ($conn->query($sql) === TRUE) {
     echo "Success ADD";
 } else  {
