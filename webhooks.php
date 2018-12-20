@@ -41,6 +41,7 @@ $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
  
 $strUrl = "https://api.line.me/v2/bot/message/reply";
+$strUrldp = "https://api.line.me/v2/bot/profile/{userId}";
  
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
@@ -50,12 +51,15 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ID ของคุณคือ ".$arrJson['events'][0]['source']['userId'];
+  $arrPostData['messages'][0]['text'] = "ID ของคุณคือ ".$arrJson['events'][0]['source']['displayName']['userId'];
   //$idcode = $arrJson['events'][0]['source']['userId'];
  // $nameline = $arrJson['events'][0]['source']['displayName'];
 } else if ($arrJson['events'][0]['message']['text'] == "test") {
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = .$arrJson['events'][0]['source']['userId'];
+  $arrPostData['messages'][0]['text'] = .$arrJson['events'][0]['source']['displayName'];
 }
 else {
   $arrPostData = array();
@@ -68,6 +72,7 @@ else {
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
+curl_setopt($ch, CURLOPT_URL,$strUrldp);
 curl_setopt($ch, CURLOPT_HEADER, false);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
