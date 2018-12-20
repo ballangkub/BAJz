@@ -21,15 +21,6 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 } 
 
-$sql = "INSERT INTO details ( LineID ) VALUES ('".$arrJson['events'][0]['source']['userId']."')";
-} else if ($conn->query($sql) === TRUE) {
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "New record created successfully".$arrJson['events'][0]['source']['userId'];
-} else if ($conn->query($sql) === FALSE) {
-    echo "Error";
-
 */
 
 require "vendor/autoload.php";
@@ -50,7 +41,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ID ของคุณคือ ".$arrJson['events'][0]['source']['userId'];
+  $arrPostData['messages'][0]['text'] = "ID ของคุณคือ ".$arrJson['events'][0]['source']['replyToken'];
   //$idcode = $arrJson['events'][0]['source']['userId'];
  // $nameline = $arrJson['events'][0]['source']['displayName'];
 } else {
