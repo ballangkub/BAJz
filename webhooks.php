@@ -50,7 +50,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ID ของคุณคือ ".$arrJson['events'][0]['source']['displayName'];
+  $arrPostData['messages'][0]['text'] = "ID ของคุณคือ ".$arrJson['events'][0]['source']['userId'];
+  $arrPostData['messages'][0]['text'] = "ชื่อของคุณคือ ".$arrJson['events'][0]['source']['displayName'];
   //$idcode = $arrJson['events'][0]['source']['userId'];
  // $nameline = $arrJson['events'][0]['source']['displayName'];
 } else {
