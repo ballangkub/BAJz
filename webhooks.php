@@ -41,8 +41,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $text = $arrJson['messages']['text'];
-  $arrPostData['messages'][0]['text'] = "ระบบได้รับข้อความ ""(".$text.")"" ของคุณแล้ว";
+  $text = $arrJson['events'][0]['message']['text'];
+  $arrPostData['messages'][0]['text'] = $text;
   //$idcode = $arrJson['events'][0]['source']['userId'];
  // $nameline = $arrJson['events'][0]['source']['displayName'];
 } else {
