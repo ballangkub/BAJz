@@ -10,12 +10,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$sql = "INSERT INTO details ( LineID , Message) VALUES ('".$_POST["txtlineid"]."' , '".$_POST["txtmessage"]."')";
+
+/* $sql = "INSERT INTO details ( LineID , Message) VALUES ('".$_POST["txtlineid"]."' , '".$_POST["txtmessage"]."')";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
-}
+} */
 
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
