@@ -79,13 +79,18 @@ if($arrJson['events'][0]['message']['text'] == $gggg) {
         echo "ERROR: Could not able to execute";
 }  
   //$nameline = $text;
-} else {
+} else if ($arrJson['events'][0]['message']['text'] == ""){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "กรุณาใส่ข้อมูลใหม่";
+  $arrPostData['messages'][0]['text'] = "บอทสวัสดีจ้าา";
   //$idcode = $arrJson['events'][0]['source']['userId'];
   //$nameline = $text;
+}else {
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "กรุณากรอกข้อมูลใหม่";
 }
 
 
