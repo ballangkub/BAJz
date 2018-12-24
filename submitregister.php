@@ -16,16 +16,12 @@ if ($conn->connect_error) {
 $test1 = $_POST["txtname"];
 $test2 = '2';
 $sql = "SELECT Name FROM botline WHERE Name = '$test1'";
-$sql2 = "INSERT INTO botline ( Name , UserID ) VALUES ('".$test1."' , '".$test2."')";
 $result = $conn->query($sql);
 if ($result->num_rows >= 1) {
     echo "Existing";
-} else if ($conn->query($sql2) === TRUE) {
-    echo "Success";
 } else {
-    echo "ERROR";
+    $sql2 = "INSERT INTO botline ( Name , UserID ) VALUES ('".$test1."' , '".$test2."')";
 }
-
 //$sql2 = "INSERT INTO botline ( Name , UserID ) VALUES ('".$test1."' , '".$test2."')";
 //if ($conn->query($sql2) === TRUE) {
 
