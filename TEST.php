@@ -18,7 +18,7 @@ $text = "TESTXX";
 $sql = "SELECT Name FROM botline WHERE Name = '$text'";
 $result = mysqli_query($sql);
 while($show = mysql_fetch_object($result)){
-	echo $show->Name.;
+	echo 'TEST';
 }
 
 /*if ($result->num_rows > 0) {
