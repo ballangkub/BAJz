@@ -28,17 +28,6 @@ if ($conn->query($sql) === TRUE) {
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
-$sql2 = "SELECT Name FROM botline";
-$result2 = $conn->query($sql2);
-if ($result2->num_rows > 0) {
-    // output data of each row
-    while($row2 = $result2->fetch_assoc()) {
-        echo "Name : " .$row2["Name"]."<br>";
-    }
-} else {
-    echo "0 results";
-}
-
 $strAccessToken = '6Fkcia04Z6b5eNyPFvCTM98VKSofDCm3zr8tX1XrbPSdMBCCCDhNhxXiJTP3wIjZT2Jj+EZ0Cr58AFhw1ZcSus9kH/gpj+N5N3kQZzkOJb3aM6wm4R5oWjt4o6kJsqsjCPDldpOY4L6/+QRmzgqYbwdB04t89/1O/w1cDnyilFU=';
 
 $content = file_get_contents('php://input');
@@ -49,6 +38,17 @@ $strUrl = "https://api.line.me/v2/bot/message/reply";
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
+
+$sql2 = "SELECT Name FROM botline";
+$result2 = $conn->query($sql2);
+if ($result2->num_rows > 0) {
+    // output data of each row
+    while($row2 = $result2->fetch_assoc()) {
+        echo "Name : " .$row2["Name"]."<br>";
+    }
+} else {
+    echo "0 results";
+}
  
 if($arrJson['events'][0]['message']['text'] == $row2["Name"]){
   $arrPostData = array();
