@@ -14,11 +14,11 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT Name FROM botline";
-$result = mysql_query($sql);
-if ($test = mysql_num_rows($result)){
-    echo $test['Name'];
-}
+$result = mysqli_query($conn,$query);
 
+if ($test = mysqli_fetch_array($result){
+    echo $test["Name"];
+}
 /*$result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo $text;
