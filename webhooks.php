@@ -43,7 +43,6 @@ $numberstu = $arrJson['events'][0]['message']['text'];
 
 $sql2 = "SELECT Name FROM botline WHERE Name = '$numberstu'";
 $result2 = $conn->query($sql2);
-echo $result2;
 /*if ($result2->num_rows > 0) {
     while($row2 = $result2->fetch_assoc()) {
         echo "Name : " .$row2["Name"]."<br>";
@@ -56,14 +55,14 @@ echo $result2;
 
 echo $gggg;
 
-if($arrJson['events'][0]['message']['text'] == $result2) {
+if($arrJson['events'][0]['message']['text'] == $numberstu) {
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $text = $arrJson['events'][0]['message']['text'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "เรียบร้อย";
   $idcode = $arrJson['events'][0]['source']['userId'];
-  $sql5 = "UPDATE botline SET UserID = '$idcode' WHERE Name = '$gggg'"; 
+  $sql5 = "UPDATE botline SET UserID = '$idcode' WHERE Name = '$result2'"; 
     if(mysqli_query($conn, $sql5)){ 
         echo "Record was updated successfully."; 
 }   else { 
