@@ -16,8 +16,8 @@ if ($conn->connect_error) {
 
 $text = "TESTXX";
 $sql = "SELECT Name FROM botline WHERE Name = '$text'";
-$result = mysql_query($sql);
-while($show = mysql_fetch_object($result)){
+$result = mysqli_query($sql);
+while($show = mysqli_fetch_object($result)){
 	echo 'TEST';
 }
 
