@@ -58,8 +58,14 @@ if($arrJson['events'][0]['message']['text'] == $gggg) {
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $text = $arrJson['events'][0]['message']['text'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "คุณชื่ออะไร";
-  //$idcode = $arrJson['events'][0]['source']['userId'];
+  $arrPostData['messages'][0]['text'] = "เรียบร้อย";
+  $idcode = $arrJson['events'][0]['source']['userId'];
+  $sql5 = "UPDATE botline SET UserID = '$idcode' WHERE Name = '$gggg'"; 
+    if(mysqli_query($conn, $sql5)){ 
+        echo "Record was updated successfully."; 
+}   else { 
+        echo "ERROR: Could not able to execute";
+}  
   //$nameline = $text;
 } else {
   $arrPostData = array();
