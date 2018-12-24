@@ -45,7 +45,7 @@ $sql2 = "SELECT Name FROM botline";
 $result2 = $conn->query($sql2);
 if ($result2->num_rows > 0) {
     while($row2 = $result2->fetch_assoc()){
-        echo "Name : " .$rows2["Name"]."<br>";
+        echo "Name : " .$row2["Name"]."<br>";
         $gggg = $row2["Name"];
     }
 } else {
