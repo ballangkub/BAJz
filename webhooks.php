@@ -45,11 +45,12 @@ if ($result2->num_rows > 0) {
     // output data of each row
     while($row2 = $result2->fetch_assoc()) {
         echo "Name : " .$row2["Name"]."<br>";
+        $gggg = $row2["Name"];
     }
 } else {
     echo "0 results";
 }
-$row2["Name"] = $gggg;
+
 echo $gggg;
  
 if($arrJson['events'][0]['message']['text'] == $gggg) {
