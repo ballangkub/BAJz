@@ -86,9 +86,9 @@ if($arrJson['events'][0]['message']['text'] == $gggg) {
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $text = $arrJson['events'][0]['message']['text'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "บอทรับทราบบ";
-  $idcode = $arrJson['events'][0]['source']['userId'];
-  $nameline = $text;
+  $arrPostData['messages'][0]['text'] = "กรุณาใส่ข้อมูลใหม่";
+  //$idcode = $arrJson['events'][0]['source']['userId'];
+  //$nameline = $text;
 }
 
 
