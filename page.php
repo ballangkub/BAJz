@@ -12,9 +12,9 @@ Register<br>
 <tbody>
 
 <tr>
-<td> &nbsp;Line ID</td>
+<td> &nbsp;Name</td>
 <td>
-<input name="txtlineid" type="text" id="txtlineid">
+<input name="txtname" type="text" id="txtname">
 </td>
 </tr>
 <tr>
