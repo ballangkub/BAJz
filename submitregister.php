@@ -14,13 +14,13 @@ if ($conn->connect_error) {
 }
 
 $test1 = $_POST["txtname"];
-$max = "SELECT MAX(UserID) FROM botline";
+$test2 = $_POST["txtname"];
 $sql = "SELECT Name FROM botline WHERE Name = '$test1'";
 $result = $conn->query($sql);
 if ($result->num_rows >= 1) {
     echo "Existing";
 } else {
-    $sql2 = "INSERT INTO botline ( Name , UserID ) VALUES ('".$test1."' , '$max'+1)";
+    $sql2 = "INSERT INTO botline ( Name , UserID ) VALUES ('".$test1."' , '".$test2."')";
     if($conn->query($sql2) === TRUE){
         echo "ADD SUCCESS";
     } else {
