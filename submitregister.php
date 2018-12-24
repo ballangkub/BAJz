@@ -13,5 +13,18 @@ if ($conn->connect_error) {
     echo "Connection Success"."<br>";
 }
 
+$test1 = $_POST["txtname"];
+$test2 = '2';
+$sql = "SELECT Name FROM botline WHERE Name = '$test1'";
+$result = $conn->query($sql);
+if ($result->num_rows = 0) {
+    $sql2 = "INSERT INTO botline ( Name , UserID ) VALUES ('".$test1."' , '".$test2."')";
+        if ($conn->query($sql2) === TRUE) {
+            echo "New record created successfully";
+  } else {
+      echo "Error";
+    } 
+}
+
 
 ?>
