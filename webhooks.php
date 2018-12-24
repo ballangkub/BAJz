@@ -83,12 +83,13 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
+/*
 $sql = "INSERT INTO botline (UserID , Name) VALUES ( '$idcode' , '$nameline' )";
 if ($conn->query($sql) === TRUE) {
     echo "Success ADD";
 } else  {
     echo "Error";
-} 
+} */
 
 
 ?>
