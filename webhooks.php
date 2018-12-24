@@ -49,7 +49,7 @@ if ($result2->num_rows > 0) {
 } else {
     echo "0 results";
 }
-$gggg = $row2["Name"];
+$row2["Name"] = $gggg;
 echo $gggg;
  
 if($arrJson['events'][0]['message']['text'] == $gggg) {
