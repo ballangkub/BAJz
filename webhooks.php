@@ -56,7 +56,7 @@ echo $result2;
 
 echo $gggg;
 
-if($arrJson['events'][0]['message']['text'] == $gggg) {
+if($arrJson['events'][0]['message']['text'] == $result2) {
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $text = $arrJson['events'][0]['message']['text'];
