@@ -13,20 +13,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$test1 = $_POST["txtname"];
-$test2 = $_POST["txtmessage"];
-
-$sql = "SELECT Name FROM botline WHERE Name = '$test1'"
-$result = $conn->query($sql2);
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()){
-        echo "Name : " .$row["Name"]."<br>";
-        $push = $row["Name"];
-    }
-} else {
-    echo "0 results";
-}
-
 /*$sql = "INSERT INTO details ( LineID , Message) VALUES ('".$_POST["txtlineid"]."' , '".$_POST["txtmessage"]."')";
 
 if ($conn->query($sql) === TRUE) {
