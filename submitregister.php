@@ -14,13 +14,18 @@ if ($conn->connect_error) {
 }
 
 $test1 = $_POST["txtname"];
-$test2 = '2';
+$test2 = '1';
 $sql = "SELECT Name FROM botline WHERE Name = '$test1'";
 $result = $conn->query($sql);
 if ($result->num_rows >= 1) {
     echo "Existing";
 } else {
     $sql2 = "INSERT INTO botline ( Name , UserID ) VALUES ('".$test1."' , '".$test2."')";
+    if($conn->query($sql2) === TRUE){
+        echo "ADD SUCCESS";
+    } else {
+        echo "ADD ERROR";
+    }
 }
 //$sql2 = "INSERT INTO botline ( Name , UserID ) VALUES ('".$test1."' , '".$test2."')";
 //if ($conn->query($sql2) === TRUE) {
