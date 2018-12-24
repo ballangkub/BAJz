@@ -21,7 +21,7 @@ $sql = "SELECT UserID FROM botline WHERE Name = '$test1'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()){
-        echo "Name : " .$row["UserID"]."<br>";
+        echo "UserID : " .$row["UserID"]."<br>";
         $push = $row["UserID"];
     }
 } else {
