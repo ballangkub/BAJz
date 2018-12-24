@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 $textxx = "SELECT Name FROM botline";
 
-$testxx = "SELECT Name FROM botline WHERE Name = '$textxx' "
+$testxx = "SELECT Name FROM botline WHERE Name = '$textxx' ";
     
     echo $testxx;
 
