@@ -18,7 +18,7 @@ $text = "TESTXX";
 $sql = "SELECT Name FROM botline WHERE Name = '$text'";
 $result = mysqli_query($sql);
 if($show = mysqli_fetch_object($result)){
-	echo "TEST";
+	echo $show->[Name];
 }else { 
 	echo "ERROR";
 }
