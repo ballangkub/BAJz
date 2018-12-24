@@ -42,7 +42,6 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 $sql2 = "SELECT Name FROM botline";
 $result2 = $conn->query($sql2);
 if ($result2->num_rows > 0) {
-    // output data of each row
     while($row2 = $result2->fetch_assoc()) {
         echo "Name : " .$row2["Name"]."<br>";
         $gggg = $row2["Name"];
