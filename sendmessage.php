@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 $test1 = $_POST["txtname"];
 $test2 = $_POST["txtmessage"];
 
-$sql = "SELECT Name FROM botline WHERE Name = '$test1'"
+$sql = "SELECT Name FROM botline WHERE Name = '$test1'";
 $result = $conn->query($sql2);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()){
