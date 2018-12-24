@@ -44,8 +44,10 @@ $numberstu = $arrJson['events'][0]['message']['text'];
 $sql2 = "SELECT Name FROM botline";
 $result2 = $conn->query($sql2);
 if ($result2->num_rows > 0) {
-        echo "Name : " .$result2["Name"]."<br>";
+    while($row2 = $result2->fetch_assoc()){
+        echo "Name : " .$rows2["Name"]."<br>";
         $gggg = $row2["Name"];
+    }
 } else {
     echo "0 results";
 }
