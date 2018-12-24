@@ -75,7 +75,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error";
 } 
 
-mysqli_query($conn,"SET NAMES'utf8"');
+mysqli_query($conn,"SET NAMES'utf8'");
 
 
 ?>
