@@ -50,6 +50,7 @@ if ($result2->num_rows > 0) {
     echo "0 results";
 }
 $gggg = $row2["Name"];
+echo $gggg;
  
 if($arrJson['events'][0]['message']['text'] == $gggg) {
   $arrPostData = array();
