@@ -24,6 +24,10 @@ if ($conn->query($sql) === TRUE) {
 } 
 
 */
+
+require "vendor/autoload.php";
+require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
+
 $sql2 = "SELECT Name FROM botline";
 $result2 = $conn->query($sql2);
 if ($result2->num_rows > 0) {
@@ -34,9 +38,6 @@ if ($result2->num_rows > 0) {
 } else {
     echo "0 results";
 }
-
-require "vendor/autoload.php";
-require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
 $strAccessToken = '6Fkcia04Z6b5eNyPFvCTM98VKSofDCm3zr8tX1XrbPSdMBCCCDhNhxXiJTP3wIjZT2Jj+EZ0Cr58AFhw1ZcSus9kH/gpj+N5N3kQZzkOJb3aM6wm4R5oWjt4o6kJsqsjCPDldpOY4L6/+QRmzgqYbwdB04t89/1O/w1cDnyilFU=';
 
