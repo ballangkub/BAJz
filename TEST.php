@@ -17,10 +17,7 @@ $text = 'TEST';
 $sql = "SELECT Name FROM botline WHERE Name = '$text' ";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "Text : " .$row["Name"].;
-    }
+    echo $text;
 } else {
     echo "0 results";
 }
