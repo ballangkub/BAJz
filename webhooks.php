@@ -52,7 +52,8 @@ if ($result2->num_rows > 0) {
 }
 
 echo $gggg;
- 
+echo $gggg;
+
 if($arrJson['events'][0]['message']['text'] == $gggg) {
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
