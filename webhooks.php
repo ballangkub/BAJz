@@ -41,7 +41,7 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
 $numberstu = $arrJson['events'][0]['message']['text'];
 
-$sql2 = "SELECT Name FROM botline WHERE Name = '$numberstu'";
+$sql2 = "SELECT Name FROM botline";
 $result2 = $conn->query($sql2);
 if ($result2->num_rows = 1) {
     while($row2 = $result2->fetch_assoc()) {
