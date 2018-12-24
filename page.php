@@ -6,7 +6,7 @@
 </head>
 	
 <body>	
-		<form name="form1" method="post" action="checklogin.php">
+		<form name="form1" method="post" action="sendmessage.php">
 Register<br>
 <table border="1" style="width: 300px">
 <tbody>
