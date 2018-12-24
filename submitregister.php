@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 $test1 = $_POST["txtname"];
-$max = "SELECT MAX( UserID ) FROM botline;"
+$max = "SELECT MAX(UserID) FROM botline";
 $sql = "SELECT Name FROM botline WHERE Name = '$test1'";
 $result = $conn->query($sql);
 if ($result->num_rows >= 1) {
