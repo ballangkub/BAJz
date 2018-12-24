@@ -13,15 +13,11 @@ if ($conn->connect_error) {
    // echo "Connection Success";
 }
 
-$textxx = "SELECT Name FROM botline";
+$sql = "SELECT Name FROM botline";
+$text = $sql;
+echo $text;
 
-$testxx = "SELECT Name FROM botline WHERE Name = '$textxx' ";
-    
-    echo $testxx;
-
-/*$text = 'TESTXX';
-$sql = "SELECT Name FROM botline WHERE Name = '$text' ";
-$result = $conn->query($sql);
+/*$result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo $text;
 } else {
