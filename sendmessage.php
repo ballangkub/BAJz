@@ -17,12 +17,12 @@ if ($conn->connect_error) {
 $test1 = $_POST["txtname"];
 $test2 = $_POST["txtmessage"];
 
-$sql = "SELECT Name FROM botline WHERE Name = '$test1'";
+$sql = "SELECT UserID FROM botline WHERE Name = '$test1'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()){
-        echo "Name : " .$row["Name"]."<br>";
-        $push = $row["Name"];
+        echo "Name : " .$row["UserID"]."<br>";
+        $push = $row["UserID"];
     }
 } else {
     echo "0 results";
