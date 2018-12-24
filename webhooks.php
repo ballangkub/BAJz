@@ -25,11 +25,6 @@ if ($conn->query($sql) === TRUE) {
 
 */
 
-$textxx = "SELECT Name FROM botline";
-
-$testxx = "SELECT Name FROM botline WHERE Name = '$textxx'";
-
-
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
