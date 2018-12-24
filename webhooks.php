@@ -84,7 +84,6 @@ if($arrJson['events'][0]['message']['text'] == $gggg) {
 } else {
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $text = $arrJson['events'][0]['message']['text'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "กรุณาใส่ข้อมูลใหม่";
   //$idcode = $arrJson['events'][0]['source']['userId'];
