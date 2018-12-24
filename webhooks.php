@@ -65,7 +65,7 @@ if ($result2->num_rows > 0) {
 }
 */
 
-if($arrJson['events'][0]['message']['text'] == $gggg) {
+if($arrJson['events'][0]['message']['text'] == "") {
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $text = $arrJson['events'][0]['message']['text'];
@@ -79,7 +79,7 @@ if($arrJson['events'][0]['message']['text'] == $gggg) {
         echo "ERROR: Could not able to execute";
 }  
   //$nameline = $text;
-} else if ($arrJson['events'][0]['message']['text'] == ""){
+} else if ($arrJson['events'][0]['message']['text'] == $gggg){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
