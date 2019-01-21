@@ -17,15 +17,12 @@ if ($conn->connect_error) {
 $test1 = $_POST["txtname"];
 $test2 = $_POST["txtmessage"];
 
-$push1 = 'U065093edd69838903cc8aedf034df042';
-
 $sql = "SELECT UserID FROM botline WHERE Name = '$test1'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()){
         echo "UserID : " .$row["UserID"]."<br>";
         $push = $row["UserID"];
-        echo $test2;
     }
 } else {
     echo "0 results";
@@ -49,7 +46,7 @@ $pushID = '$push';
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('test');
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($test2);
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
