@@ -18,6 +18,7 @@ $test1 = $_POST["txtname"];
 $test2 = $_POST["txtmessage"];
 
 $push1 = "U065093edd69838903cc8aedf034df042";
+$push2 = "";
 
 $sql = "SELECT UserID FROM botline WHERE Name = '$test1'";
 $result = $conn->query($sql);
@@ -45,6 +46,7 @@ $channelSecret = 'cb35ef400aeeb1531a9c836e5d3e72ed';
 
 $pushID = $push;
 $pushID1 = $push1;
+$pushID2 = $push2;
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
@@ -52,7 +54,9 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($test2);
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 $response1 = $bot->pushMessage($pushID1, $textMessageBuilder);
+$response1 = $bot->pushMessage($pushID1, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 echo $response1->getHTTPStatus() . ' ' . $response1->getRawBody();
+echo $response2->getHTTPStatus() . ' ' . $response2->getRawBody();
 ?>
