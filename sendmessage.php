@@ -17,6 +17,8 @@ if ($conn->connect_error) {
 $test1 = $_POST["txtname"];
 $test2 = $_POST["txtmessage"];
 
+$push1 = "U065093edd69838903cc8aedf034df042";
+
 $sql = "SELECT UserID FROM botline WHERE Name = '$test1'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -41,7 +43,7 @@ $access_token = '6Fkcia04Z6b5eNyPFvCTM98VKSofDCm3zr8tX1XrbPSdMBCCCDhNhxXiJTP3wIj
 
 $channelSecret = 'cb35ef400aeeb1531a9c836e5d3e72ed';
 
-$pushID = $push;
+$pushID = $push and $push1;
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
