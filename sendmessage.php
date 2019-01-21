@@ -18,7 +18,7 @@ $test1 = $_POST["txtname"];
 $test2 = $_POST["txtmessage"];
 
 $push1 = "U065093edd69838903cc8aedf034df042";
-$push2 = "";
+$push2 = "U6ff7ec421f8ee71d62fc7556df0e9ebf";
 
 $sql = "SELECT UserID FROM botline WHERE Name = '$test1'";
 $result = $conn->query($sql);
