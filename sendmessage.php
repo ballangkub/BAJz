@@ -54,7 +54,7 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($test2);
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 $response1 = $bot->pushMessage($pushID1, $textMessageBuilder);
-$response1 = $bot->pushMessage($pushID1, $textMessageBuilder);
+$response2 = $bot->pushMessage($pushID2, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 echo $response1->getHTTPStatus() . ' ' . $response1->getRawBody();
