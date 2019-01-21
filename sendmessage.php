@@ -43,13 +43,16 @@ $access_token = '6Fkcia04Z6b5eNyPFvCTM98VKSofDCm3zr8tX1XrbPSdMBCCCDhNhxXiJTP3wIj
 
 $channelSecret = 'cb35ef400aeeb1531a9c836e5d3e72ed';
 
-$pushID = $push1 and $push;
+$pushID = $push;
+$pushID1 = $push1;
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($test2);
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
+$response1 = $bot->pushMessage($pushID1, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+echo $response1->getHTTPStatus() . ' ' . $response1->getRawBody();
 ?>
