@@ -25,6 +25,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()){
         echo "UserID : " .$row["UserID"]."<br>";
         $push = $row["UserID"];
+        echo $test2;
     }
 } else {
     echo "0 results";
