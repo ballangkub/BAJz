@@ -1,0 +1,31 @@
+.bg{
+  background-image: url(../img/index1.gif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height:938px;
+  background-size: cover;
+  background-position: center;
+}
+
+.sizeicon{
+  height: 100px;
+  width: 100px;
+}
+
+.sizebuttom{
+  height: 100px;
+  width: 200px;
+}
+
+.fontsize{
+  font-size: 36px;
+}
+
+.changefonts{
+  font-size: 20px;
+}
+
+.box{
+	width: 300;
+	height:100;
+}
