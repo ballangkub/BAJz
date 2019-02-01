@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="iproject/public/css/stylesheet.css">
+    <link rel="stylesheet" href="public/css/stylesheet.css">
 
     <title>iproject</title>
   </head>
@@ -19,7 +19,7 @@
             <div class="col-4">                
             </div>
             <div class="col-4 text-center" style="margin-top:70px">
-                <img src="iproject/public/img/iproject.gif" width="500" height="250" >
+                <img src="public/img/iproject.gif" width="500" height="250" >
             </div>
             <div class="col-4">                
             </div>
