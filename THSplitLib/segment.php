@@ -18,15 +18,15 @@ class Segment {
     
     function __construct() {
         if (!class_exists('Thchracter')) {
-        include('thcharacter.php');
+        include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'thcharacter.php');
 		}
 		
 		if (!class_exists('Unicode')) {
-        include('unicode.php');
+        include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'unicode.php');
 		}
 
 
-        $file_handle = fopen("http://planappalert.herokuapp.com/THSplitLib/dictionary/dictionary.txt", "rb");
+        $file_handle = fopen(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'dictionary' .  DIRECTORY_SEPARATOR . 'dictionary.txt', "rb");
         while (!feof($file_handle)) {
             $line_of_text = fgets($file_handle);
             $this->_dictionary_array[crc32(trim($line_of_text))] = trim($line_of_text);
