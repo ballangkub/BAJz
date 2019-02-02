@@ -26,7 +26,7 @@ class Segment {
 		}
 
 
-        $file_handle = fopen(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'dictionary' .  DIRECTORY_SEPARATOR . 'dictionary.txt', "rb");
+        $file_handle = fopen("http://planappalert.herokuapp.com/THSplitLib/dictionary/dictionary.txt", "rb");
         while (!feof($file_handle)) {
             $line_of_text = fgets($file_handle);
             $this->_dictionary_array[crc32(trim($line_of_text))] = trim($line_of_text);
