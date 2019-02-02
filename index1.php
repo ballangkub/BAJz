@@ -29,7 +29,7 @@
             $text_to_segment = trim($_POST['text_to_segment']);
             echo '<hr/>';
             //echo '<b>ประโยคที่ต้องการตัดคือ: </b>' . $text_to_segment . '<br/>';
-            include("http://planappalert.herokuapp.com/THSplitLib/segment.php");
+            include("THSplitLib/segment.php");
             $segment = new Segment();
             //echo '<hr/>';
             $result = $segment->get_segment_array($text_to_segment);
@@ -37,7 +37,7 @@
             echo "<br>";
             $test = implode(',',$result);
             $_SESSION["test1"] = $test;
-            echo $_SESSION["test1"];
+            //echo $_SESSION["test1"];
             echo "<br>";
             
             $text_to_segment = trim($_POST['text_to_segment']);
@@ -51,7 +51,7 @@
             echo "<br>";
             $testdic1 = implode(',',$result1);
             $_SESSION["test2"] = $testdic1;
-            echo $_SESSION["test2"];
+            //echo $_SESSION["test2"];
 
             $txtfull = $_POST['text_to_segment'];
             $_SESSION["txtfull"]=$txtfull;
