@@ -25,7 +25,6 @@
         <?php
 
         if ($_POST) {
-            echo "TEST";
             $time_start = microtime(true);
             
             $text_to_segment = trim($_POST['text_to_segment']);
@@ -41,6 +40,7 @@
             $_SESSION["test1"] = $test;
             echo $_SESSION["test1"];
             echo "<br>";
+            echo $text_to_segment;
             
             $text_to_segment = trim($_POST['text_to_segment']);
             echo '<hr/>';
