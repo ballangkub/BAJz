@@ -25,7 +25,7 @@
         <?php
 
         if ($_POST) {
-            
+            echo "TEST";
             $time_start = microtime(true);
             
             $text_to_segment = trim($_POST['text_to_segment']);
