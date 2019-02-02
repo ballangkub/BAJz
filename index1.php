@@ -28,7 +28,6 @@
             $time_start = microtime(true);
             $text_to_segment = trim($_POST['text_to_segment']);
             echo '<hr/>';
-            echo $text_to_segment;
             //echo '<b>ประโยคที่ต้องการตัดคือ: </b>' . $text_to_segment . '<br/>';
             include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'THSplitLib/segment.php');
             $segment = new Segment();
