@@ -26,7 +26,7 @@
 
         if ($_POST) {
             $time_start = microtime(true);
-            
+            echo $_POST['text_to_segment'];
             $text_to_segment = trim($_POST['text_to_segment']);
             echo '<hr/>';
             //echo '<b>ประโยคที่ต้องการตัดคือ: </b>' . $text_to_segment . '<br/>';
@@ -40,7 +40,6 @@
             $_SESSION["test1"] = $test;
             echo $_SESSION["test1"];
             echo "<br>";
-            echo $text_to_segment;
             
             $text_to_segment = trim($_POST['text_to_segment']);
             echo '<hr/>';
