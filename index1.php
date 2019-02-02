@@ -25,7 +25,7 @@
         <?php
 
         if ($_POST) {
-            $time_start = microtime(true);
+            //$time_start = microtime(true);
             $text_to_segment = trim($_POST['text_to_segment']);
             echo '<hr/>';
             //echo '<b>ประโยคที่ต้องการตัดคือ: </b>' . $text_to_segment . '<br/>';
